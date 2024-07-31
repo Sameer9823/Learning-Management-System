@@ -10,36 +10,35 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // for checking user logged in or not
+  
   const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
 
-  // for dispaying the options, according to user role
+  
   const role = useSelector((state) => state?.auth?.role);
 
-  // function to hide the drawer on close button click
+  
   const hideDrawer = () => {
     const element = document.getElementsByClassName("drawer-toggle");
     element[0].checked = false;
 
-    // collapsing the drawer-side width to zero
+    
     const drawerSide = document.getElementsByClassName("drawer-side");
     drawerSide[0].style.width = 0;
   };
 
-  // function for changing the drawer width on menu button click
   const changeWidth = () => {
     const drawerSide = document.getElementsByClassName("drawer-side");
     drawerSide[0].style.width = "auto";
   };
 
-  // function to handle logout
+  
   const handleLogout = async (event) => {
     event.preventDefault();
 
-    // calling logout action
+    
     const res = await dispatch(logout());
 
-    // redirect to home page if true
+    
     if (res?.payload?.success) navigate("/");
   };
 
