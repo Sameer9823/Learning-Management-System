@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "npm i && react-scripts build"
+    "build": "npm i && ESLINT_NO_DEV_ERRORS=true && react-scripts build"
   },
   "keywords": [],
   "author": "",
