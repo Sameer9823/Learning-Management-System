@@ -7,8 +7,7 @@
   "scripts": {
   "start": "node server.js",
   "dev": "node server.js",
-  "install": "npm install",
-  "build": "react-scripts build && cp -R build/* public/"
+  "build": "npm install && react-scripts build && cp -R build/* public/"
 }
 ,
   "keywords": [],
