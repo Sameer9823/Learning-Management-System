@@ -5,10 +5,12 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "npm i"
-  },
+  "start": "node server.js",
+  "dev": "node server.js",
+  "install": "npm install",
+  "build": "react-scripts build && cp -R build/* public/"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
