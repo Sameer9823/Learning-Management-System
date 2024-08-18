@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "build": "npm install && react-scripts build && cp -R build/* public/"
+    "dev": "nodemon server.js",
+    "build": "CI=false react-scripts build"
   },
   "keywords": [],
   "author": "",
