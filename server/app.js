@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: 'https://lmsclient-three.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    
     credentials: true,
   })
 );
