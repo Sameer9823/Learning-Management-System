@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Third-Party
 app.use(
   cors({
-    origin: 'https://learning-management-system-1.netlify.app/',
+    origin: 'https://lmsclient-three.vercel.app/',
     
     credentials: true,
   })
