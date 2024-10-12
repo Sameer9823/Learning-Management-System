@@ -89,6 +89,9 @@ const Layout = ({ children }) => {
             <li>
               <Link to={"/about"}>About Us</Link>
             </li>
+            <li>
+              <Link to={"/chatBot"}>Chat Bot</Link>
+            </li>
 
             {/* creating the bottom part of drawer */}
             {/* if user is not logged in */}

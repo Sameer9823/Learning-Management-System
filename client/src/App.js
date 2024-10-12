@@ -23,6 +23,7 @@ import DisplayLectures from "./Pages/Dashboard/DisplayLectures";
 import RequireAuth from "./Components/Auth/RequireAuth";
 import NotRequireAuth from "./Components/Auth/NotRequireAuth";
 import Denied from "./Pages/Denied";
+import ChatBot from "./Pages/chatBot/chatBot";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/courses" element={<CourseList />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/chatBot" element={<ChatBot />} />
         <Route path="/denied" element={<Denied />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/reset-password/:resetToken" element={<ResetPassword />} />

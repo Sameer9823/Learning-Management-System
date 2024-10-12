@@ -4,7 +4,7 @@ import aboutMainImage from "../Assets/Images/aboutMainImage.png";
 import apj from "../Assets/Images/QuotesPersonalityImage/apj.png";
 import billGates from "../Assets/Images/QuotesPersonalityImage/billGates.png";
 import einstein from "../Assets/Images/QuotesPersonalityImage/einstein.png";
-import nelsonMandela from "../Assets/Images/QuotesPersonalityImage/nelsonMandela.png";
+// import nelsonMandela from "../Assets/Images/QuotesPersonalityImage/nelsonMandela.png";
 import steveJobs from "../Assets/Images/QuotesPersonalityImage/steveJobs.png";
 
 const About = () => {
@@ -47,17 +47,17 @@ const About = () => {
             <div className="flex flex-col items-center justify-center gap-4 px-[15%]">
               {/* for personality image */}
               <img
-                className="w-40 rounded-full border-2 border-gray-400"
-                src={nelsonMandela}
-                alt="Nelson Mandela"
+                className="w-40 h-32 rounded-full border-2 border-gray-400"
+                src="https://th.bing.com/th/id/OIP.ST9nXgtC3yB4JPRo0h2oUgHaEK?w=326&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                alt="Ratan tata"
               />
               {/* for writting the quotes */}
               <p className="text-xl text-gray-200">
-                "Education is the most powerful tool you can use to change the
-                world."
+              "Don’t just have a career or academic goals. Set goals to give you a balanced, successful life. I use the word balanced before successful. Balanced means ensuring your health, relationships, mental peace are all in good order".
               </p>
               {/* for personality name */}
-              <h3 className="text-2xl font-semibold">Nelson Mandela</h3>
+              <h3 className="text-2xl font-semibold">Ratan
+              Tata</h3>
             </div>
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <a href="#slide5" className="btn btn-circle">
