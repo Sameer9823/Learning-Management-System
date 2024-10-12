@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 // Third-Party
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: 'https://lmsclient-three.vercel.app/',
+    
     credentials: true,
   })
 );
