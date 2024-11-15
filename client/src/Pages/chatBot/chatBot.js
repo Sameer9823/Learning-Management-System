@@ -28,9 +28,13 @@ function ChatBot() {
         }
       );
 
+      // Extract and clean the response text
+      const rawBotMessage = response.data.candidates[0].content.parts[0].text;
+      const cleanedBotMessage = rawBotMessage.replace(/\*/g, ""); // Remove asterisks
+
       const botMessage = {
         type: "bot",
-        text: response.data.candidates[0].content.parts[0].text,
+        text: cleanedBotMessage,
       };
 
       // Add bot response to messages
@@ -54,71 +58,72 @@ function ChatBot() {
 
   return (
     <Layout>
-    <div className=" min-h-screen p-5">
-      {/* Page Heading at the Top */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-white">LMS <span className="text-yellow-300">IntelliBot</span> : Your AI-Powered Helper</h1>
-        <p className="text-lg text-gray-300 mt-2">Engage in Real-Time, Intelligent Conversations</p>
-      </div>
-
-      {/* Main Section: Chat and Spline Components */}
-      <div className="flex flex-col md:flex-row items-center justify-center h-full space-y-8 md:space-y-0 md:space-x-8 pt-[4rem] ">
-
-      <div className="w-full md:w-1/2 flex justify-center items-center">
-          <Spline
-            scene="https://prod.spline.design/aLafBoQYvcb52exL/scene.splinecode"
-            style={{ width: '600px', height: '500px' }} // Adjust as needed
-          />
+      <div className="min-h-screen p-5">
+        {/* Page Heading at the Top */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-white">
+            LMS <span className="text-yellow-300">IntelliBot</span>: Your AI-Powered Helper
+          </h1>
+          <p className="text-lg text-gray-300 mt-2">
+            Engage in Real-Time, Intelligent Conversations
+          </p>
         </div>
-        {/* Chat AI Container */}
-        <div className="w-full md:w-2/3 lg:w-1/2 xl:w-[550px] rounded-lg shadow-2xl bg-gray-800 text-white flex flex-col h-[500px]">
-          <div className="bg-gray-700 text-white text-center p-4 rounded-t-lg border-b">
-            <h1 className="text-2xl font-bold">Chat AI</h1>
-            <p className="text-sm text-yellow-300">Powered by LMS</p>
-          </div>
-          
-          {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 max-h-[450px]">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`p-3 rounded-lg ${
-                  message.type === "user"
-                    ? "bg-blue-500 text-white self-end"
-                    : "bg-gray-700 text-white self-start"
-                }`}
-              >
-                {message.text}
-              </div>
-            ))}
-            <div ref={messageEndRef} /> {/* Empty div to act as scroll target */}
-          </div>
 
-          {/* Input Form */}
-          <form onSubmit={generateAnswer} className="flex border-t border-gray-600">
-            <input
-              required
-              className="border-none rounded-lg w-full p-4 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Ask your question..."
+        {/* Main Section: Chat and Spline Components */}
+        <div className="flex flex-col md:flex-row items-center justify-center h-full space-y-8 md:space-y-0 md:space-x-8 pt-[4rem]">
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <Spline
+              scene="https://prod.spline.design/aLafBoQYvcb52exL/scene.splinecode"
+              style={{ width: '600px', height: '500px' }} // Adjust as needed
             />
-            <button
-              type="submit"
-              className={`bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-all duration-300 ml-2 ${
-                generatingAnswer ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              disabled={generatingAnswer}
-            >
-              {generatingAnswer ? "..." : "Send"}
-            </button>
-          </form>
-        </div>
+          </div>
 
-        {/* Spline Component */}
-       
+          {/* Chat AI Container */}
+          <div className="w-full md:w-2/3 lg:w-1/2 xl:w-[550px] rounded-lg shadow-2xl bg-gray-800 text-white flex flex-col h-[500px]">
+            <div className="bg-gray-700 text-white text-center p-4 rounded-t-lg border-b">
+              <h1 className="text-2xl font-bold">Chat AI</h1>
+              <p className="text-sm text-yellow-300">Powered by LMS</p>
+            </div>
+            
+            {/* Messages Container */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 max-h-[450px]">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`p-3 rounded-lg ${
+                    message.type === "user"
+                      ? "bg-blue-500 text-white self-end"
+                      : "bg-gray-700 text-white self-start"
+                  }`}
+                >
+                  {message.text}
+                </div>
+              ))}
+              <div ref={messageEndRef} /> {/* Empty div to act as scroll target */}
+            </div>
+
+            {/* Input Form */}
+            <form onSubmit={generateAnswer} className="flex border-t border-gray-600">
+              <input
+                required
+                className="border-none rounded-lg w-full p-4 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Ask your question..."
+              />
+              <button
+                type="submit"
+                className={`bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-all duration-300 ml-2 ${
+                  generatingAnswer ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                disabled={generatingAnswer}
+              >
+                {generatingAnswer ? "..." : "Send"}
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
     </Layout>
   );
 }

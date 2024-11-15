@@ -55,7 +55,7 @@ const Profile = () => {
                   ? "/denied"
                   : "/changepassword"
               }
-              className="w-1/2 bg-yellow-600 hover:bg-yellow-700 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold cursor-pointer text-center"
+              className="w-[200px] bg-yellow-600 hover:bg-yellow-700 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold cursor-pointer text-center"
             >
               <button>Change Password</button>
             </Link>

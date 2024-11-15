@@ -296,7 +296,7 @@ export const deleteCourseById = asyncHandler(async (req, res, next) => {
   }
 
   // Remove course
-  await course.remove();
+  await course.deleteOne();
 
   // Send the message as response
   res.status(200).json({
