@@ -8,7 +8,6 @@ function ChatBot() {
   const [messages, setMessages] = useState([]); // Store messages as an array
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
 
-  const API_KEY = "AIzaSyC4It3QhWfSlMDjoFVQv3gay94Y35-ZhkY"; // Replace with your actual API key
   const messageEndRef = useRef(null); // Reference for the end of the messages
 
   async function generateAnswer(e) {
@@ -22,7 +21,7 @@ function ChatBot() {
     setQuestion(""); // Clear input field
     try {
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyA5isHdIscq9RUDiPVgdqQuaeMDxV8RZgY`,
         {
           contents: [{ parts: [{ text: question }] }],
         }
