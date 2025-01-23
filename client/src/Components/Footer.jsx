@@ -36,7 +36,7 @@ const Footer = () => {
           </a>
           <a
             className="hover:text-yellow-500 transition-all ease-in-out duration-300"
-            href="#"
+            href="https://www.linkedin.com/in/sameer-selokar-60435224b/"
           >
             <BsLinkedin />
           </a>
